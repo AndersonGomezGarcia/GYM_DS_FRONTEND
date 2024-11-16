@@ -36,7 +36,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(14, 17, 26, 1), rgba(0, 0, 0, 0)); /* Degradado */
+    background: linear-gradient(to right, rgb(0, 0, 0), rgba(239, 236, 236, 0)); /* Degradado */
     pointer-events: none;
   }
   
@@ -63,7 +63,7 @@
     width: 500px; /* Ajusta el ancho al 100% del contenedor */
     border-radius: 10px;
     border: 1px solid #4d4d4d7a;
-    background-color: rgb(14, 17, 26);
+    background-color: rgb(205, 207, 212);
   }
   
   button {
