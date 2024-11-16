@@ -1,6 +1,7 @@
 import React from 'react';
 import './login.css';
-import referenceImage from './gym.jpg'; // Asegúrate de tener una imagen de referencia en tu proyecto
+import referenceImage from './gym.jpg'; 
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -22,6 +23,9 @@ function Login() {
       </div>
       <div className="image-container">
         <img src={referenceImage} alt="Reference" />
+      </div>
+      <div className="link-sign_up">
+        ¿No tienes una cuenta? <Link to="./sign-up.js">Regístrate aquí</Link> {/* Cambia <a> por <Link> */}
       </div>
     </div>
   );
