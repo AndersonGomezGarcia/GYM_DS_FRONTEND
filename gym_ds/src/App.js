@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/login';
 import Signup from './components/sign-up';
+import PostRegisterForm from './components/afterSignUpUser';
 
 function App() {
   return (
