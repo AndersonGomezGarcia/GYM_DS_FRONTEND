@@ -1,85 +1,96 @@
+/* Contenedor principal */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: rgb(14, 17, 26);
-  }
-  
-  .form-container {
-    flex: 1;
-    max-width: 50%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra los elementos dentro del formulario */
-  }
-  
-  .image-container {
-    flex: 1;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-  .image-container img {
-    max-width: 100%;
-    min-height: 100%;
-  }
-  
-  .image-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgb(0, 0, 0), rgba(239, 236, 236, 0)); /* Degradado */
-    pointer-events: none;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-    width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible */
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra los elementos dentro del formulario */
-    width: 100%;
-  }
-  
-  label {
-    margin-bottom: 5px;
-  }
-  
-  input {
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    width: 500px; /* Ajusta el ancho al 100% del contenedor */
-    border-radius: 10px;
-    border: 1px solid #4d4d4d7a;
-    background-color: rgb(205, 207, 212);
-  }
-  
-  button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 500px; /* Ajusta el ancho al 100% del contenedor */
-     /* Limita el ancho máximo */
-    border-radius: 10px;
-    font-weight: bolder;
-    color: rgb(14, 17, 26);
-    font-size: 20px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 90vh; /* Asegura que ocupe el 90% de la altura del viewport */
+  background-color: rgb(14, 17, 26);
+  border-radius: 15px;
+  overflow: hidden; /* Evita desbordamientos visuales */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6); /* Sombra elegante */
+}
+
+/* Contenedor del formulario */
+.form-container {
+  flex: 0.8; /* Ocupa la mitad izquierda del contenedor */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centra el contenido */
+  background: rgba(255, 255, 255, 0.1); /* Fondo transparente */
+  border-right: 2px solid rgba(255, 255, 255, 0.1); /* Línea divisoria elegante */
+  border-radius: 15px 0 0 15px; /* Bordes redondeados en la parte izquierda */
+  text-align: center;
+}
+
+/* Título del formulario */
+.form-container h2 {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.8rem;
+}
+
+/* Inputs del formulario */
+input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #4d4d4d7a;
+  background-color: rgb(205, 207, 212);
+}
+
+/* Botón */
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: rgb(14, 17, 26);
+  border: none;
+  cursor: pointer;
+  width: 90%;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Link de registro */
+.link-sign_up {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: white;
+  text-align: center;
+}
+
+.link-sign_up a {
+  color: #ff4500; /* Rojo intenso */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link-sign_up a:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor de la imagen */
+.image-container {
+  flex: 1; /* Ocupa todo el lado derecho */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(18, 18, 18, 0.9); /* Fondo oscuro */
+  position: relative;
+  overflow: hidden; /* Evita desbordamientos */
+}
+
+.image-container img {
+  width: 100%; /* La imagen ocupa todo el ancho */
+  height: 100%; /* La imagen ocupa toda la altura */
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
