@@ -1,5 +1,5 @@
 import React from "react";
-import './styles-signup.css';
+import './stylesSignUp.css';
 import { Link } from "react-router-dom";
 import referenceImage from './sign-up-img.jpg'; 
 

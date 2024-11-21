@@ -2,7 +2,7 @@ import React from 'react';
 import './login.css';
 import referenceImage from './gym.jpg'; 
 import { Link } from 'react-router-dom';
-import Signup from './sign-up';
+import Signup from './signUp';
 
 function Login() {
   return (
