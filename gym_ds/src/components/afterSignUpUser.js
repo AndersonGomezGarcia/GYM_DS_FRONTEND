@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './stylessAfterSignUpUser.css';
 import healthImage from './imcImg.jpg' // Asegúrate de tener esta imagen en tu proyecto
 
-function afterSignUpUser() {
+function AfterSignUpUser() {
   const [formData, setFormData] = useState({
     weight: '',
     height: '',
@@ -122,4 +122,4 @@ function afterSignUpUser() {
   );
 }
 
-export default afterSignUpUser;
+export default AfterSignUpUser;

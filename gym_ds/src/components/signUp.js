@@ -24,7 +24,7 @@ function Signup() {
     console.log('Registro exitoso:', formData);
 
     // Navega a la página de configuración del perfil
-    navigate('/after-signup');
+    navigate('/afterSignUpUser');
   };
 
   return (

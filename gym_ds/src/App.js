@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/login';
 import Signup from './components/signUp';
-import afterSignUpUser from './components/afterSignUpUser';
+import AfterSignUpUser from './components/afterSignUpUser';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} /> {/* Página de inicio de sesión */}
           <Route path="/signup" element={<Signup />} /> {/* Página de registro */}
-          <Route path="/after-signup" element={<afterSignUpUser />} /> {/* Página post-registro */}
+          <Route path="/afterSignUpUser" element={<AfterSignUpUser />} /> {/* Página post-registro */}
         </Routes>
       </Router>
     </div>
