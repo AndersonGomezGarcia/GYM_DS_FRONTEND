@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-//import './PostRegisterForm.css';
+import './stylessAfterSignUpUser.css';
+import healthImage from './imcImg.jpg' // Asegúrate de tener esta imagen en tu proyecto
 
-function PostRegisterForm() {
+function afterSignUpUser() {
   const [formData, setFormData] = useState({
     weight: '',
     height: '',
@@ -9,6 +10,8 @@ function PostRegisterForm() {
     bodyType: '',
     imc: null,
   });
+
+  const [showImage, setShowImage] = useState(false); // Controla la visibilidad de la imagen
 
   const calculateIMC = () => {
     const { weight, height } = formData;
@@ -32,79 +35,91 @@ function PostRegisterForm() {
 
   return (
     <div className="post-register-container">
-      <form className="form-card" onSubmit={handleSubmit}>
-        <h2>Configura tu Perfil</h2>
-        
-        <label htmlFor="weight">Peso (kg)</label>
-        <input
-          type="number"
-          id="weight"
-          name="weight"
-          value={formData.weight}
-          onChange={handleChange}
-          placeholder="Ingresa tu peso"
-          required
-        />
+  {/* Contenedor de la imagen */}
+  <div className={`image-popup ${showImage ? 'active' : ''}`}>
+    <img src={healthImage} alt="Guía de salud" />
+  </div>
 
-        <label htmlFor="height">Altura (cm)</label>
-        <input
-          type="number"
-          id="height"
-          name="height"
-          value={formData.height}
-          onChange={handleChange}
-          placeholder="Ingresa tu altura"
-          required
-        />
+  {/* Botón para mostrar imagen */}
+  <button className="info-btn" onClick={() => setShowImage(!showImage)}>
+    Guía IMC
+  </button>
 
-        <button type="button" className="calculate-btn" onClick={calculateIMC}>
-          Calcular IMC
-        </button>
+  {/* Tarjeta del formulario */}
+  <form className="form-card" onSubmit={handleSubmit}>
+    <h2>Configura tu Perfil</h2>
 
-        {formData.imc && (
-          <p className="imc-result">
-            Tu IMC es: <strong>{formData.imc}</strong>
-          </p>
-        )}
+    <label htmlFor="weight">Peso (kg)</label>
+    <input
+      type="number"
+      id="weight"
+      name="weight"
+      value={formData.weight}
+      onChange={handleChange}
+      placeholder="Ingresa tu peso"
+      required
+    />
 
-        <label htmlFor="goal">Objetivo</label>
-        <select
-          id="goal"
-          name="goal"
-          value={formData.goal}
-          onChange={handleChange}
-          required
-        >
-          <option value="" disabled>
-            Selecciona tu objetivo
-          </option>
-          <option value="adelgazar">Adelgazar</option>
-          <option value="volumen">Volumen</option>
-          <option value="mantener">Mantener</option>
-        </select>
+    <label htmlFor="height">Altura (cm)</label>
+    <input
+      type="number"
+      id="height"
+      name="height"
+      value={formData.height}
+      onChange={handleChange}
+      placeholder="Ingresa tu altura"
+      required
+    />
 
-        <label htmlFor="bodyType">Tipo de cuerpo</label>
-        <select
-          id="bodyType"
-          name="bodyType"
-          value={formData.bodyType}
-          onChange={handleChange}
-          required
-        >
-          <option value="" disabled>
-            Selecciona tu tipo de cuerpo
-          </option>
-          <option value="mesomorfo">Mesomorfo</option>
-          <option value="endomorfo">Endomorfo</option>
-          <option value="ectomorfo">Ectomorfo</option>
-        </select>
+    <button type="button" className="calculate-btn" onClick={calculateIMC}>
+      Calcular IMC
+    </button>
 
-        <button type="submit" className="submit-btn">
-          Guardar Datos
-        </button>
-      </form>
-    </div>
+    {formData.imc && (
+      <p className="imc-result">
+        Tu IMC es: <strong>{formData.imc}</strong>
+      </p>
+    )}
+
+    <label htmlFor="goal">Objetivo</label>
+    <select
+      id="goal"
+      name="goal"
+      value={formData.goal}
+      onChange={handleChange}
+      required
+    >
+      <option value="" disabled>
+        Selecciona tu objetivo
+      </option>
+      <option value="adelgazar">Adelgazar</option>
+      <option value="volumen">Volumen</option>
+      <option value="mantener">Mantener</option>
+    </select>
+
+    <label htmlFor="bodyType">Tipo de cuerpo</label>
+    <select
+      id="bodyType"
+      name="bodyType"
+      value={formData.bodyType}
+      onChange={handleChange}
+      required
+    >
+      <option value="" disabled>
+        Selecciona tu tipo de cuerpo
+      </option>
+      <option value="mesomorfo">Mesomorfo</option>
+      <option value="endomorfo">Endomorfo</option>
+      <option value="ectomorfo">Ectomorfo</option>
+    </select>
+
+    <button type="submit" className="submit-btn">
+      Guardar Datos
+    </button>
+  </form>
+</div>
+
   );
 }
 
-export default PostRegisterForm;
+export default afterSignUpUser;
