@@ -1,0 +1,156 @@
+/* Contenedor principal */
+.post-register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    /*background-color: rgb(16, 44, 128); /* Fondo oscuro */
+    padding: 10px;
+    color: white;
+    position: relative;
+    transition: all 0.5s ease; /* Animación suave */
+  }
+  
+  /* Tarjeta del formulario */
+  .form-card {
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    transition: transform 0.5s ease; /* Animación del movimiento */
+  }
+  
+  /* Cuando la imagen está activa, mueve el formulario hacia la izquierda */
+  .image-popup.active ~ .form-card {
+    transform: translateX(-100px); /* Desplaza el formulario hacia la izquierda */
+  }
+  
+  /* Título */
+  .form-card h2 {
+    text-align: center;
+    color: #ff4500; /* Rojo destacado */
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+  
+  /* Etiquetas */
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Campos de entrada */
+  input,
+  select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #4d4d4d7a;
+    background-color: rgb(205, 207, 212);
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  /* Botones */
+  button {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Botón calcular IMC */
+  .calculate-btn {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+  }
+  
+  .calculate-btn:hover {
+    background-color: #e63900;
+  }
+  
+  /* Botón guardar */
+  .submit-btn {
+    background-color: #007bff;
+    color: rgb(14, 17, 26);
+    border: none;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Resultado del IMC */
+  .imc-result {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #ff4500; /* Destacado en rojo */
+  }
+  
+  /* Botón para mostrar imagen */
+  .info-btn {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  
+  .info-btn:hover {
+    background-color: #e63900;
+  }
+  
+  /* Contenedor de la imagen */
+  .image-popup {
+    position: absolute;
+    top: 50%;
+    right: -100%; /* Oculta la imagen inicialmente */
+    transform: translateY(-50%);
+    max-width: 400px;
+    max-height: 400px;
+    background-color: rgb(255, 255, 255, 0.9); /* Fondo translúcido */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  
+  /* Animación de entrada */
+  .image-popup.active {
+    right: -400px; /* Posición visible */
+    opacity: 1;
+  }
+  
+  /* Imagen */
+  .image-popup img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
