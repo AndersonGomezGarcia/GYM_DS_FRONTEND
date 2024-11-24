@@ -25,7 +25,7 @@ function Login() {
         <img src={referenceImage} alt="Reference" />
       </div>
       <div className="link-sign_up">
-        ¿No tienes una cuenta? <Link to="./sign-up.js">Regístrate aquí</Link> {/* Cambia <a> por <Link> */}
+        ¿No tienes una cuenta? <Link to="../sign-up">Regístrate aquí</Link> {/* Cambia <a> por <Link> */}
       </div>
     </div>
   );
