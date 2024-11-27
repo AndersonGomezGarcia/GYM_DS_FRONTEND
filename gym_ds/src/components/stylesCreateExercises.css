@@ -1,0 +1,83 @@
+/* Contenedor principal */
+.create-exercise-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(./exercisesImg.jpg); /* Imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 70px;
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+}
+
+/* Formulario principal */
+.exercise-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px; /* Más espacio interno */
+  border-radius: 15px; /* Bordes más redondeados */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  max-width: 800px; /* Formulario más ancho */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Mayor separación entre las secciones */
+}
+
+/* Título del formulario */
+.exercise-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem; /* Tamaño de fuente más grande */
+  color: #333333;
+}
+
+/* Diseño de la cuadrícula */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  gap: 40px; /* Más espacio entre los campos */
+}
+
+/* Cada grupo de entrada */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555555;
+  font-size: 1.2rem; /* Aumenta el tamaño del texto */
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 15px; /* Más espacio interno */
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 1.2rem; /* Tamaño de fuente más grande */
+  width: 100%; /* Asegura que ocupe el ancho completo */
+  box-sizing: border-box;
+}
+
+/* Botón de guardar */
+.save-btn {
+  padding: 20px 40px; /* Botón más grande */
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  font-size: 1.2rem; /* Fuente más grande */
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center;
+}
+
+.save-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
+}
