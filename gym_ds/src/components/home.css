@@ -1,0 +1,80 @@
+.home{
+    width: 100%;
+    height: 100%;
+}
+.home-image{
+    background-image: url('home.jpg');
+    height: 1000px;
+    width: 100vw;
+}
+
+.Menu{
+    position: fixed;
+    top: 0;
+    height: 100px;
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(47, 47, 47, 0.7);
+    padding: 0 20px;
+    height: 100px;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-size: 30px;
+    transition: color 0.3s, transform 0.3s; /* Transición suave para color y transformación */
+}
+
+nav ul li a:hover {
+    color: #ff4500; /* Cambia el color al pasar el ratón */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+nav ul li a:active {
+    color: #e74c3c; /* Cambia el color al hacer clic */
+}
+
+section ul{
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+section li{
+    list-style: none;
+    margin: 15px ;
+    font-size: 17px;
+}
+section strong{
+    color: #e74c3c;
+}
+
+button{
+    margin: 25px auto 50px auto;
+}
+
+p, p strong{
+    font-size: 1.5em;
+    color: greenyellow!important;
+    margin: 25px 0 20px 0
+}
