@@ -29,7 +29,7 @@ function Login() {
       </div>
 
       <div className="link-sign_up">
-        ¿No tienes una cuenta? <Link to="../sign-up">Regístrate aquí</Link> {/* Cambia <a> por <Link> */}
+        ¿No tienes una cuenta? <Link to="../signUp">Regístrate aquí</Link> {/* Cambia <a> por <Link> */}
       </div>
 
 
