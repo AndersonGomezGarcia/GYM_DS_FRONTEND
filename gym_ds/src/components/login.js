@@ -27,13 +27,6 @@ function Login() {
       <div className="image-container">
         <img src={referenceImage} alt="Reference" />
       </div>
-
-      <div className="link-sign_up">
-        ¿No tienes una cuenta? <Link to="../signUp">Regístrate aquí</Link> {/* Cambia <a> por <Link> */}
-      </div>
-
-
-
     </div>
   );
 }
