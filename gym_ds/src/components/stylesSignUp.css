@@ -9,76 +9,139 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden; /* Evita scroll innecesario */
 }
 
 /* Contenedor principal */
 .signup-page {
   display: flex;
-  width: 90%;
-  max-width: 1200px;
+  flex-direction: row;
+  width: 90%; /* Ocupa más espacio horizontal */
+  max-width: 1600px; /* Ampliar para pantallas grandes */
+  height: 90vh; /* Incrementa el alto */
   margin: 0 auto;
-  height: 90vh; /* Asegura que ocupe el 90% de la altura del viewport */
-  background-color: #121212;
-  border-radius: 15px;
-  overflow: hidden; /* Evita desbordamientos visuales */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6); /* Sombra elegante */
+  background-color: #1e1e1e;
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7); /* Sombra elegante */
+  overflow: hidden;
 }
 
 /* Contenedor de la imagen */
 .signup-page .image-container {
-  flex: 1; /* Ocupa todo el espacio disponible en el lado izquierdo */
+  flex: 1; /* Ocupa la mitad del espacio */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(18, 18, 18, 0.9); /* Fondo oscuro */
+  background-color: rgba(30, 30, 30, 0.9); /* Fondo oscuro */
   position: relative;
   overflow: hidden;
 }
 
 .signup-page .image-container img {
-  width: 100%; /* La imagen ocupará todo el ancho del contenedor */
-  height: 100%; /* La imagen ocupará toda la altura del contenedor */
-  object-fit: cover; /* Asegura que la imagen se adapte sin deformarse */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta sin deformar */
 }
 
 /* Contenedor del formulario */
 .signup-page .form-container {
-  flex: 0.5; /* Ocupa solo la mitad del espacio total */
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1); /* Transparente */
-  border-left: 2px solid rgba(255, 255, 255, 0.1); /* Línea divisoria elegante */
-  border-radius: 0 15px 15px 0; /* Bordes redondeados en la parte derecha */
+  flex: 1; /* Ocupa la otra mitad del espacio */
+  padding: 2.5rem; /* Más espacio interno */
+  background-color: rgba(255, 255, 255, 0.1); /* Transparente */
+  border-left: 2px solid rgba(255, 255, 255, 0.2); /* Línea divisoria elegante */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
 /* Título del formulario */
 .signup-page .form-container h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem; /* Tamaño más grande */
   color: #e74c3c; /* Rojo elegante */
 }
 
 /* Inputs del formulario */
-.signup-page .form-container input {
-  width: 90%; /* Reduce el ancho dentro del formulario */
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
+.signup-page .form-container input,
+.signup-page .form-container select {
+  width: 95%; /* Ancho incrementado */
+  max-width: 600px; /* Más grande para pantallas grandes */
+  padding: 1.2rem; /* Más grande */
+  margin-bottom: 1.2rem;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   outline: none;
+  font-size: 1.2rem; /* Texto más grande */
 }
 
-/* Botón */
+/* Botones */
 .signup-page .form-container button {
-  width: 90%;
-  padding: 0.75rem;
-  margin-top: 1rem;
+  width: 95%;
+  max-width: 600px;
+  padding: 1.2rem;
+  margin-top: 1.2rem;
   background-color: #e74c3c;
   border: none;
   color: white;
-  font-size: 1rem;
-  border-radius: 5px;
+  font-size: 1.3rem; /* Tamaño de fuente más grande */
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.signup-page .form-container button:hover {
+  background-color: #d62c1a; /* Color más oscuro al pasar el cursor */
+}
+
+/* Mensajes */
+.signup-page .form-container .error-message,
+.signup-page .form-container .success-message {
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.signup-page .form-container .error-message {
+  color: #e74c3c;
+}
+
+.signup-page .form-container .success-message {
+  color: #2ecc71;
+}
+
+/* Resultado IMC */
+.signup-page .form-container .imc-result {
+  font-size: 1.3rem; /* Texto más grande */
+  margin: 1.2rem 0;
+}
+
+/* Botón Guía IMC */
+.signup-page .form-container .info-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 1.2rem;
+}
+
+.signup-page .form-container .info-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Imagen emergente */
+.signup-page .form-container .image-popup {
+  margin: 1.2rem 0;
+  text-align: center;
+}
+
+.signup-page .form-container .image-popup img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }

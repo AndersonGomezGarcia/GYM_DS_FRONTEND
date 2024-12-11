@@ -2,12 +2,10 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/login';
-import Signup from './components/signUp';
-import AfterSignUpUser from './components/afterSignUpUser';
+import SignupAndProfile from './components/signUp';
 import RoutineChoosing from './components/routineChoosing';
 import RoutineProgress from './components/routineProgress';
 import Home from './components/home';
-
 import CreateExercises from './components/createExercises'; // Importa el componente
 import UserHome from './components/userHome';
 
@@ -17,8 +15,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} /> {/* Página de inicio de sesión */}
-          <Route path="/signup" element={<Signup />} /> {/* Página de registro */}
-          <Route path="/afterSignUpUser" element={<AfterSignUpUser />} /> {/* Página post-registro */}
+          <Route path="/signup" element={<SignupAndProfile />} /> {/* Página de registro */}
           <Route path="/routineChoosing" element={<RoutineChoosing />} /> {/* Página post-registro */}
           <Route path='/routineProgress' element={<RoutineProgress />} /> {/* Página de progreso de rutina */}
           <Route path='/Home' element={<Home />} /> {/* Página de progreso de rutina */}
