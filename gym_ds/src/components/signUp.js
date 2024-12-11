@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import './stylesSignUp.css';
-import referenceImage from './sign-up-img.jpg';
-import healthImage from './imcImg.jpg';
+import "./stylesSignUp.css";
+import referenceImage from "./sign-up-img.jpg";
+import healthImage from "./imcImg.jpg";
 
 function SignupAndProfile() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    weight: '',
-    height: '',
-    goal: '',
-    bodyType: '',
+    name: "",
+    email: "",
+    password: "",
+    weight: "",
+    height: "",
+    goal: "",
+    bodyType: "",
     imc: null,
   });
 
@@ -29,7 +29,7 @@ function SignupAndProfile() {
     const { weight, height } = formData;
     if (weight && height) {
       const heightInMeters = height / 100;
-      const imc = (weight / (heightInMeters ** 2)).toFixed(2);
+      const imc = (weight / heightInMeters ** 2).toFixed(2);
       setFormData({ ...formData, imc });
     }
   };
@@ -38,22 +38,25 @@ function SignupAndProfile() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8081/api/usuarios/registro", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          nombre: formData.name,
-          email: formData.email,
-          contrasena: formData.password,
-          peso: formData.weight,
-          altura: formData.height,
-          objetivo: formData.goal,
-          tipo_anatomia: formData.bodyType,
-          imc: formData.imc,
-        }),
-      });
+      const response = await fetch(
+        "http://localhost:8081/api/usuarios/registro",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nombre: formData.name,
+            email: formData.email,
+            contrasena: formData.password,
+            peso: formData.weight,
+            altura: formData.height,
+            objetivo: formData.goal,
+            tipo_anatomia: formData.bodyType,
+            imc: formData.imc,
+          }),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -66,7 +69,9 @@ function SignupAndProfile() {
       }
     } catch (error) {
       console.error("Error al registrar usuario:", error);
-      setErrorMessage("Ocurrió un error al intentar registrar. Inténtalo de nuevo.");
+      setErrorMessage(
+        "Ocurrió un error al intentar registrar. Inténtalo de nuevo."
+      );
       setSuccessMessage("");
     }
   };
@@ -82,10 +87,12 @@ function SignupAndProfile() {
           <>
             <h2>Registro de Usuario</h2>
             <p className="subtitle">Crea una cuenta para comenzar</p>
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              setStep(2);
-            }}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                setStep(2);
+              }}
+            >
               <label htmlFor="name">Nombre</label>
               <input
                 type="text"
@@ -124,7 +131,10 @@ function SignupAndProfile() {
         {step === 2 && (
           <>
             <h2>Configura tu Perfil</h2>
-            <button className="info-btn" onClick={() => setShowImage(!showImage)}>
+            <button
+              className="info-btn"
+              onClick={() => setShowImage(!showImage)}
+            >
               Guía IMC
             </button>
             {showImage && (
@@ -155,7 +165,11 @@ function SignupAndProfile() {
                 required
               />
 
-              <button type="button" className="calculate-btn" onClick={calculateIMC}>
+              <button
+                type="button"
+                className="calculate-btn"
+                onClick={calculateIMC}
+              >
                 Calcular IMC
               </button>
 
