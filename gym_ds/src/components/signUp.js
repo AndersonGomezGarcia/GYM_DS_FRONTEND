@@ -8,11 +8,11 @@ function SignupAndProfile() {
     name: "",
     email: "",
     password: "",
-    weight: "",
-    height: "",
+    weight: 0,
+    height: 0,
     goal: "",
     bodyType: "",
-    imc: null,
+    imc: 0,
   });
 
   const [step, setStep] = useState(1); // Controla qué formulario se muestra
@@ -39,7 +39,7 @@ function SignupAndProfile() {
 
     try {
       const response = await fetch(
-        "http://localhost:8081/api/usuarios/registro",
+        "http://localhost:8081/api/usuarios/registro", //cambiar local host a 8080 o su respectivo puerto para que funcione.
         {
           method: "POST",
           headers: {
