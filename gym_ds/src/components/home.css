@@ -1,5 +1,5 @@
 body{
-    background-color: azure;
+    background-color: rgb(211, 206, 203);
 }
 .home{
     width: 100%;
@@ -44,9 +44,38 @@ body{
     height: 100px;
     margin-left: 20px;
     background: url('logo.png');
-    background-size: cover;
-    
+    background-size: cover;  
 }
+
+.equipo-img, .routine-img, .trainer-img, .clases-img {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4f0f;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none; /* Asegúrate de que el borde esté configurado como none */
+    margin: auto auto;
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.equipo-img{
+    background-image: url('maquina.png');
+}
+.routine-img{
+    background-image: url('routine.png');
+}
+.clases-img{
+    background-image: url('grupo.png');
+}
+.trainer-img{
+    background-image: url('hombre.png');
+}
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -90,7 +119,7 @@ nav ul li a:active {
 section{
 }
 section ul{
-    display: block;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 100px;
@@ -98,11 +127,23 @@ section ul{
 
 section li{
     list-style: none;
-    margin: 15px ;
+    margin: 45px ;
     font-size: 17px;
+    background-color: rgba(0, 0, 0, 0.863);
+    padding: 25px;
+    border-radius: 15px;
+    transition: .4s;
+    width: 200px;
+    color:white;
+    text-align: justify;
+}
+section li:hover{
+    transform: translateY(-10px);
+    transition: .3s;
 }
 section strong{
     color: #e74c3c;
+    font-size: 19px;
 }
 
 button{
@@ -111,6 +152,6 @@ button{
 
 p, p strong{
     font-size: 1.5em;
-    color: greenyellow!important;
+    color: rgb(0, 9, 87)!important;
     margin: 25px 0 20px 0
 }

@@ -29,35 +29,40 @@ function Home() {
           <p>
             BE <sa>STRONG</sa> <br /> TRAINING <sa>HARD</sa>
           </p>
-          <button>EMPIEZA</button>
+          <Link to="../signUp">
+            <button>EMPIEZA</button>
+          </Link>
         </div>
       </div>
-      <h1>¡Bienvenido a Gym DS!</h1> 
+      <h1>¡Bienvenido a Gym DS!</h1>
       <section>
-        
         <h2>¿Qué encontrarás con nosotros?</h2>
         <ul>
           <li>
+            <div className="routine-img" />
             <strong>Rutinas Personalizadas:</strong> Diseñadas según tu nivel,
             objetivos y tiempo disponible.
           </li>
           <li>
+            <div className="trainer-img" />
             <strong>Entrenadores Profesionales:</strong> Siempre listos para
             guiarte y motivarte.
           </li>
           <li>
+            <div className="equipo-img" />
             <strong>Equipos de Última Generación:</strong> Para que entrenes de
             manera cómoda y segura.
           </li>
           <li>
+            <div className="clases-img" />
             <strong>Clases Grupales y Ambientación Única:</strong> Vive la
             energía que te impulsa a darlo todo.
           </li>
         </ul>
         <div class="cta">
           <p>
-            <strong>Empieza Ahora:</strong> Regístrate y obtén una{" "}
-            <em>sesión de evaluación gratis</em>.
+          <em><strong>Empieza Ahora:</strong> Regístrate y obtén una{" "}
+            sesión de evaluación gratis</em>.
           </p>
           <Link to="../signUp">
             <button>¡Quiero Empezar!</button>

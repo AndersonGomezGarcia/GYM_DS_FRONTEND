@@ -1,3 +1,4 @@
+
 /* Fondo negro */
 .user-home-container {
   background-color: #121212;
@@ -46,7 +47,7 @@
   display: flex;
   flex-direction: column;
   padding-top: 80px; /* Para compensar la barra de navegación */
-  padding: 20px;
+  padding: 100px 20px 20px 20px;
 }
 
 /* Contenedor de columnas y contenido dinámico */
@@ -84,7 +85,9 @@
   padding: 20px;
   border-radius: 10px;
 }
-
+.user-logo{
+  margin-left: 180px;
+}
 /* Imagen del usuario */
 .user-image {
   width: 150px;

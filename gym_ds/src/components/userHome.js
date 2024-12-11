@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import  React, { useState } from "react";
 import "./stylesUserHome.css"; // Archivo CSS para los estilos
 import RoutineProgress from "./routineProgress";
 import RoutineChoosing from "./routineChoosing";
 import referenceImage from "./ejemplo2.jpg";
+import { Link } from "react-router-dom";
 
 function UserHome() {
   const [visibleComponent, setVisibleComponent] = useState(null); // Estado para componentes visibles
@@ -18,7 +19,7 @@ function UserHome() {
       {/* Barra de navegación */}
       <nav className="navbar">
         <ul className="nav-links">
-          <li className="nav-item">Home</li>
+          <li className="nav-item"><Link to="../Home">Home</Link> </li>
           <li className="nav-item">Settings</li>
           <li className="nav-item">Profile</li>
         </ul>
