@@ -14,7 +14,7 @@ function Login() {
     e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
 
     try {
-      const response = await fetch("http://localhost:8081/api/usuarios/login", {
+      const response = await fetch("http://localhost:8081/api/usuarios/login", { //Cambiar puerto a 8080 o su respectivo puerto para que funcione.
         method: "POST",
         headers: {
           "Content-Type": "application/json",
