@@ -1,0 +1,75 @@
+.view-exercises-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column; /* Alinear elementos verticalmente */
+  align-items: center;
+  gap: 10px; /* Espacio entre input y botón */
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #45a049;
+}
+
+.exercise-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.exercise-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.exercise-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.exercise-card h3 {
+  margin: 0;
+  color: #333;
+}
+
+.exercise-card p {
+  margin: 5px 0 0;
+  color: #777;
+}
