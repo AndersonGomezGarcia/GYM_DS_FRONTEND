@@ -1,34 +1,77 @@
-import React from "react";
-import { useState } from 'react';
-import './stylesCreateExercises.css'; // Archivo CSS para estilos
+import React, { useState } from "react";
+import "./stylesCreateExercises.css"; // Archivo CSS para estilos
 
 function CreateExercises() {
   const [exerciseData, setExerciseData] = useState({
-    exerciseName: '',
-    exercisePhoto: null,
-    machineName: '',
-    machinePhoto: null,
-    description: '',
-    series: '',
-    repetitions: '',
+    exerciseName: "",
+    machineName: "",
+    description: "",
+    series: "",
+    repetitions: "",
   });
+
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setExerciseData({ ...exerciseData, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    const { name } = e.target;
-    const file = e.target.files[0];
-    setExerciseData({ ...exerciseData, [name]: file });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Enviar datos del ejercicio (incluyendo series y repeticiones)
+      const ejercicioData = {
+        nombre: exerciseData.exerciseName,
+        descripcion: exerciseData.description,
+        series: parseInt(exerciseData.series, 10),
+        repeticiones: parseInt(exerciseData.repetitions, 10),
+      };
+
+      const ejercicioResponse = await fetch("http://localhost:8081/api/ejercicios/agregar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(ejercicioData),
+      });
+
+      if (!ejercicioResponse.ok) {
+        throw new Error("Error al guardar el ejercicio");
+      }
+
+      const ejercicioResult = await ejercicioResponse.json();
+      console.log("Ejercicio guardado:", ejercicioResult);
+
+      // Enviar datos del equipamiento
+      const equipamientoData = {
+        nombre: exerciseData.machineName,
+      };
+
+      const equipamientoResponse = await fetch("http://localhost:8081/api/equipamiento/agregar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(equipamientoData),
+      });
+
+      if (!equipamientoResponse.ok) {
+        throw new Error("Error al guardar el equipamiento");
+      }
+
+      const equipamientoResult = await equipamientoResponse.json();
+      console.log("Equipamiento guardado:", equipamientoResult);
+
+      // Mensaje de éxito
+      setSuccessMessage("¡Ejercicio y equipamiento creados exitosamente!");
+      setErrorMessage("");
+
+    } catch (error) {
+      console.error("Error al guardar los datos:", error.message);
+      setErrorMessage(`Error: ${error.message}`);
+      setSuccessMessage("");
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Datos del ejercicio:', exerciseData);
-    alert('Ejercicio creado exitosamente');
-  };
 
   return (
     <div className="create-exercise-container">
@@ -50,7 +93,7 @@ function CreateExercises() {
             />
           </div>
 
-          {/* Foto del ejercicio */}
+          {/* Foto del ejercicio (NO FUNCIONAL) */}
           <div className="form-group">
             <label htmlFor="exercisePhoto">Foto del ejercicio</label>
             <input
@@ -58,8 +101,7 @@ function CreateExercises() {
               id="exercisePhoto"
               name="exercisePhoto"
               accept="image/*"
-              onChange={handleFileChange}
-              required
+              disabled // Deshabilitar funcionalmente
             />
           </div>
 
@@ -77,7 +119,7 @@ function CreateExercises() {
             />
           </div>
 
-          {/* Foto de la máquina */}
+          {/* Foto de la máquina (NO FUNCIONAL) */}
           <div className="form-group">
             <label htmlFor="machinePhoto">Foto de la máquina</label>
             <input
@@ -85,8 +127,7 @@ function CreateExercises() {
               id="machinePhoto"
               name="machinePhoto"
               accept="image/*"
-              onChange={handleFileChange}
-              required
+              disabled // Deshabilitar funcionalmente
             />
           </div>
 
@@ -137,6 +178,10 @@ function CreateExercises() {
           Guardar Ejercicio
         </button>
       </form>
+
+      {/* Mensajes de estado */}
+      {successMessage && <p className="success-message">{successMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
   );
 }
