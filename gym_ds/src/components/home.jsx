@@ -13,10 +13,10 @@ function Home() {
               <a href="/Home">HOME</a>
             </li>
             <li>
-              <a href="/routineProgress">Progreso de rutina</a>
+              <a href="/routineProgress">PROGRESO</a>
             </li>
             <li>
-              <a href="/routineChoosing">Elegir rutina</a>
+              <a href="/routineChoosing">RUTINAS</a>
             </li>
             <li>
               <a href="/createExercises">EJERCICIOS</a>

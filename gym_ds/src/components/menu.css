@@ -1,0 +1,40 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   /* background-color: rgba(47, 47, 47, 0.7);*/
+    background: linear-gradient(45deg,rgb(0, 0, 0) 0%, rgba(17, 17, 17, .5) 100%);
+    padding: 0 20px;
+    height: 100px;
+    width: 100%;
+    border-bottom: 2px solid #ff4500;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-size: 27px;
+    font-weight: 700;
+    transition: color 0.3s, transform 0.3s; /* Transición suave para color y transformación */
+}
+
+nav ul li a:hover {
+    color: #ff4500; /* Cambia el color al pasar el ratón */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+nav ul li a:active {
+    color: #e74c3c; /* Cambia el color al hacer clic */
+}

@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(211, 206, 203);
+    background-color: #212A35;
 }
 .home{
     width: 100%;
@@ -7,7 +7,7 @@ body{
 }
 .home-image{
     display: flex;
-    background-image: url('home.jpg');
+    background-image: url('img/home.jpg');
     height: 800px;
     width: 100vw;
 
@@ -43,7 +43,7 @@ body{
     width: 100px;
     height: 100px;
     margin-left: 20px;
-    background: url('logo.png');
+    background: url('img/logo.png');
     background-size: cover;  
 }
 
@@ -64,16 +64,16 @@ body{
 }
 
 .equipo-img{
-    background-image: url('maquina.png');
+    background-image: url('img/maquina.png');
 }
 .routine-img{
-    background-image: url('routine.png');
+    background-image: url('img/routine.png');
 }
 .clases-img{
-    background-image: url('grupo.png');
+    background-image: url('img/grupo.png');
 }
 .trainer-img{
-    background-image: url('hombre.png');
+    background-image: url('img/hombre.png');
 }
 
 nav{

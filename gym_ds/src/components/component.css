@@ -1,0 +1,47 @@
+.routine-card{
+    width: 365px;
+    height: 180px;
+    margin: 10px;
+    /*border: 1px solid rgba(255, 255, 255, 0.3);*/
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    transition: .3s;
+    background-color: rgb(24, 24, 24);;
+}
+
+.routine-card h3{
+    color: #fd3620;
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.routine-card p{
+    color: white;
+    display: none;
+}
+
+.routine-card:hover{
+    background-color: rgba(2, 2, 2, 0.8);;
+    transition: .3s;
+    transform: translateY(-10px);
+}
+
+img{
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 170px;
+    border-radius: 5px;
+}
+
+.RoutineList{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 20px 10% 0 10%;
+    justify-content: center;
+    
+
+}
+

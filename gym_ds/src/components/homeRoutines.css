@@ -1,0 +1,37 @@
+body{
+    background-color: #212A35;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1.TitleRoutines{
+    color: #fd3620;
+    text-align: center;
+    margin-top: 150px;
+    font-size: 50px;
+}
+
+
+input.Routines{
+    max-width: none;
+    height: 30px;
+    font-size: 1.2em;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    background-color: #434B53;
+    margin-top: 10px;
+    width: 60%;
+}
+
+.routine-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    width: 80%;
+    margin-left: 10%;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./stylesSignUp.css";
-import referenceImage from "./sign-up-img.jpg";
-import healthImage from "./imcImg.jpg";
+import referenceImage from "./img/sign-up-img.jpg";
+import healthImage from "./img/imcImg.jpg";
 
 function SignupAndProfile() {
   const [formData, setFormData] = useState({

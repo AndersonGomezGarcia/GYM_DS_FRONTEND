@@ -2,7 +2,7 @@ import  React, { useState } from "react";
 import "./stylesUserHome.css"; // Archivo CSS para los estilos
 import RoutineProgress from "./routineProgress";
 import RoutineChoosing from "./routineChoosing";
-import referenceImage from "./ejemplo2.jpg";
+import referenceImage from "./img/ejemplo2.jpg";
 import { Link } from "react-router-dom";
 
 function UserHome() {

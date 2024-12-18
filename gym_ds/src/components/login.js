@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
-import referenceImage from "./gym.jpg";
+import referenceImage from "./img/gym.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import Signup from "./signUp";
 

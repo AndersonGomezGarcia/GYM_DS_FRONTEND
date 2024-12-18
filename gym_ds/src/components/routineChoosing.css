@@ -46,17 +46,28 @@ input, textarea{
 }
 
 .routine-card{
-    width: 300px;
-    height: 300px;
+    width: 365px;
+    height: 180px;
     margin: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
+    /*border: 1px solid rgba(255, 255, 255, 0.3);*/
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
     transition: .3s;
-    background-color: rgba(2, 2, 2, 0.89);;
+    background-color: rgb(24, 24, 24);;
+}
+
+.routine-card h3{
+    color: #fd3620;
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.routine-card p{
+    color: white;
+    display: none;
 }
 
 .routine-card:hover{
@@ -80,8 +91,8 @@ h1{
 h3{
     color: #e74c3c;
     margin: 0;
-    
 }
+
 p{
     margin: 10px 15px 20px 15px;
     color: white;
@@ -96,6 +107,7 @@ p{
 .routine-card p{
     color: white!important;
 }
+
 h1.form{
     margin: 50px 0 20px 0;
     color: #e74c3c;
