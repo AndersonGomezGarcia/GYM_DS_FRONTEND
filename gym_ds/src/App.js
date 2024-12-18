@@ -11,6 +11,8 @@ import UserHome from './components/userHome';
 import HomeRoutines from './components/homeRoutines';
 import ViewExercises from './components/viewExercises';
 import Info from './components/info';
+import CreateRoutines from './components/createRoutine';
+
 function App() {
   return (
     <div className="App">
@@ -26,6 +28,7 @@ function App() {
           <Route path="/HomeRoutines" element={<HomeRoutines/>} /> {/*Pagina principal del usuario*/}
           <Route path="/viewExercises" element={<ViewExercises/>} /> {/*Pagina para ver los ejercicios. */}
           <Route path="/info" element={<Info/>} /> {/*Pagina para ver los ejercicios. */}
+          <Route path="/createRoutine" element={<CreateRoutines/>} /> {/*Pagina para crear las rutinas */}
         </Routes>
       </Router>
     </div>
