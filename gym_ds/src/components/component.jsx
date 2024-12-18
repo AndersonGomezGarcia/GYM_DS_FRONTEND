@@ -2,10 +2,10 @@ import React from "react";
 import "./component.css";
 
 
-export function Routine({ routine }) {
+export function Routine({ routine, image }) {
   return (
     <div className="routine-card">
-      <img src={routine.image} alt={routine.name} />
+      <img src={image} alt={routine.name} />
       <h3>{routine.name}</h3>
       <p>{routine.description}</p>
     </div>

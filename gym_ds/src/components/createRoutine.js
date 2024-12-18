@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./stylesCreateRoutine.css";
+import { Link } from "react-router-dom";
 
 function CreateRoutines() {
   const [routineData, setRoutineData] = useState({
@@ -67,6 +68,12 @@ function CreateRoutines() {
   return (
     <div className="create-routines-container">
       <h1>Crear Rutina</h1>
+      {/* Botón para volver al listado de rutinas */}
+      <div className="button-container">
+        <Link to="/homeRoutines">
+          <button className="back-to-home-button">Volver a Rutinas</button>
+        </Link>
+      </div>
 
       {!showExerciseInput ? (
         <form className="routine-form" onSubmit={handleSubmit}>

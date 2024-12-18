@@ -1,46 +1,83 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./homeRoutines.css";
 import { Link } from "react-router-dom";
 import { Routine } from "./component";
 import { Menu } from "./menu";
+
 function HomeRoutines() {
+  const [routines, setRoutines] = useState([]); // Lista de rutinas traídas del backend
   const [selectedRoutine, setSelectedRoutine] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true); // Indicador de carga
+  const [error, setError] = useState(null); // Manejo de errores
 
-  const routines = [
-    { id: 1, name: "Full Body", description: "This routine is designed to work all the muscles in your body in a single session.", image: "img/rutina.webp" },
-    { id: 2, name: "Upper Body", description: "This routine focuses on the muscles of the upper body, including chest, back, shoulders, and arms.", image: "img/rutina.webp" },
-    { id: 3, name: "Lower Body", description: "This routine targets the muscles of the lower body, including legs, glutes, and calves.", image: "img/rutina.webp" },
-    { id: 4, name: "Cardio", description: "This routine is designed to improve cardiovascular endurance and burn calories.", image: "img/rutina.webp" },
-    { id: 5, name: "Strength Training", description: "This routine focuses on building strength through weightlifting and resistance exercises.", image: "img/rutina.webp" },
-    { id: 6, name: "Flexibility", description: "This routine aims to improve flexibility and range of motion through stretching exercises.", image: "img/rutina.webp" },
-    { id: 7, name: "HIIT", description: "This High-Intensity Interval Training routine is designed to maximize calorie burn in a short period.", image: "img/rutina.webp" },
-    { id: 8, name: "Core", description: "This routine targets the muscles of the core, including abs, obliques, and lower back.", image: "img/rutina.webp" },
-    { id: 9, name: "Yoga", description: "This routine focuses on improving flexibility, balance, and mental clarity through yoga poses.", image: "img/rutina.webp" },
-    { id: 10, name: "Pilates", description: "This routine aims to strengthen the core and improve overall body alignment through Pilates exercises.", image: "img/rutina.webp" },
-  ];
+  // Fetch para traer rutinas del backend
+  const fetchRoutines = async () => {
+    try {
+      const response = await fetch("http://localhost:8081/api/rutinas/listar-rutinas");
+      if (!response.ok) throw new Error("Error al obtener las rutinas");
 
-  const handleRoutineClick = (routine) => {
-    setSelectedRoutine(routine);
+      const data = await response.json();
+      setRoutines(data); // Actualizar la lista de rutinas
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false); // Finalizar la carga
+    }
   };
 
-  const closeModal = () => {
-    setSelectedRoutine(null);
-  };
+  // Llamada inicial para traer las rutinas al cargar el componente
+  useEffect(() => {
+    fetchRoutines();
+  }, []);
 
+  // Manejo del input de búsqueda
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  // Filtrar rutinas según el término de búsqueda
   const filteredRoutines = routines.filter((routine) =>
-    routine.name.toLowerCase().includes(searchTerm.toLowerCase())
+    routine.nombre.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // Mostrar modal con los detalles de la rutina
+  const handleRoutineClick = (routine) => {
+    setSelectedRoutine(routine);
+  };
+
+  // Cerrar modal
+  const closeModal = () => {
+    setSelectedRoutine(null);
+  };
+
+  // Obtener imagen local según el nombre de la rutina o tipo
+  const getImageForRoutine = (routineName) => {
+    switch (routineName.toLowerCase()) {
+      case "upper":
+        return "./img/ejemplo2.jpg";
+      case "lower body":
+        return "/img/rutina-lower.webp";
+      case "cardio":
+        return "/img/rutina-cardio.webp";
+      case "hiit":
+        return "/img/rutina-hiit.webp";
+      default:
+        return "./img/exercisesImg.jpg"; // Imagen predeterminada
+    }
+  };
 
   return (
     <div className="homeRoutines">
       <Menu />
       <section className="header">
         <h1 className="TitleRoutines">Descubre como mejorar tu cuerpo</h1>
+        {/* Botón para crear rutina */}
+        <div className="button-container">
+          <Link to="/createRoutine">
+            <button className="create-routine-button">Crear Rutina</button>
+          </Link>
+        </div>
         <div className="search">
           <form>
             <input
@@ -51,26 +88,39 @@ function HomeRoutines() {
               onChange={handleSearchChange}
             />
           </form>
-          <div className="RoutineList">
-            {filteredRoutines.map((routine) => (
-              <div
-                key={routine.id}
-                onClick={() => handleRoutineClick(routine)}
-              >
-                <Routine routine={routine} />
-              </div>
-            ))}
-          </div>
+
+          {/* Manejo de estado de carga y error */}
+          {loading ? (
+            <p>Cargando rutinas...</p>
+          ) : error ? (
+            <p>Error: {error}</p>
+          ) : (
+            <div className="RoutineList">
+              {filteredRoutines.map((routine) => (
+                <div
+                  key={routine.id}
+                  onClick={() => handleRoutineClick(routine)}
+                >
+                  <Routine 
+                    routine={routine}
+                    image={getImageForRoutine(routine.nombre)} // Pasar la imagen como prop
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
+
+      {/* Modal para mostrar detalles de una rutina */}
       {selectedRoutine && (
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={closeModal}>
               &times;
             </span>
-            <h2>{selectedRoutine.name}</h2>
-            <p>{selectedRoutine.description}</p>
+            <h2>{selectedRoutine.nombre}</h2>
+            <p>{selectedRoutine.descripcion}</p>
           </div>
         </div>
       )}
