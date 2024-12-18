@@ -14,10 +14,10 @@ function Home() {
             </li>
             <li>
               <a href="/signUp">USUARIO</a>
-            </li>
+            </li>{/*
             <li>
               <a href="/routineChoosing">GYM</a>
-            </li>
+            </li>*/}
             <li>
               <a href="/info">INFO</a>
             </li>

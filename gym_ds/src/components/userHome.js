@@ -49,7 +49,7 @@ function UserHome() {
               className="column"
               onClick={() => handleColumnClick("viewExercises")}
             >
-              <h2>Ver Progreso</h2>
+              <h2>Seleccionar Ejercicio</h2>
             </div>
             <div
               className="column"

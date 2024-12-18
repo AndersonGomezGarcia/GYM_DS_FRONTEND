@@ -17,6 +17,12 @@ export const Menu = () => {
             <a href="/HomeRoutines">RUTINAS</a>
           </li>
           <li>
+            <a href="/createRoutine">CREAR RUTINAS</a>
+          </li>
+          <li>
+            <a href="/createExercises">CREAR EJERCIUCIOS</a>
+          </li>
+          <li>
             <a href="/">LOG OUT</a>
           </li>
         </ul>

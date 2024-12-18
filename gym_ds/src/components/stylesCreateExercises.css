@@ -4,17 +4,14 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(./img/exercisesImg.jpg); /* Imagen de fondo */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: #121212; /* Fondo negro acorde al resto de la página */
   padding: 70px;
   width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
 }
 
 /* Formulario principal */
 .exercise-form {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente acorde al resto de la página */
   padding: 40px; /* Más espacio interno */
   border-radius: 15px; /* Bordes más redondeados */
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
@@ -25,12 +22,16 @@
   gap: 30px; /* Mayor separación entre las secciones */
 }
 
+.exercise-form textarea {
+ padding: 30px;
+}
+
 /* Título del formulario */
 .exercise-form h2 {
   text-align: center;
   margin-bottom: 30px;
   font-size: 2rem; /* Tamaño de fuente más grande */
-  color: #333333;
+  color: #ffeee7; /* Color de texto acorde al resto de la página */
 }
 
 /* Diseño de la cuadrícula */
@@ -49,24 +50,27 @@
 .form-group label {
   margin-bottom: 10px;
   font-weight: bold;
-  color: #555555;
+  color: #ffeee7; /* Color de texto acorde al resto de la página */
   font-size: 1.2rem; /* Aumenta el tamaño del texto */
 }
 
 .form-group input,
 .form-group textarea {
+  height: auto;
   padding: 15px; /* Más espacio interno */
-  border: 1px solid #cccccc;
+  border: 1px solid #4d4d4d7a; /* Color de borde acorde al resto de la página */
   border-radius: 8px;
   font-size: 1.2rem; /* Tamaño de fuente más grande */
   width: 100%; /* Asegura que ocupe el ancho completo */
   box-sizing: border-box;
+  background-color: #2C3E50; /* Fondo acorde al resto de la página */
+  color: #ffffff; /* Color de texto acorde al resto de la página */
 }
 
 /* Botón de guardar */
 .save-btn {
   padding: 20px 40px; /* Botón más grande */
-  background-color: #007bff;
+  background-color: #ff4f0f; /* Color de fondo acorde al resto de la página */
   color: #ffffff;
   border: none;
   font-size: 1.2rem; /* Fuente más grande */
@@ -78,6 +82,6 @@
 }
 
 .save-btn:hover {
-  background-color: #0056b3;
+  background-color: #e74c3c; /* Color de fondo al pasar el cursor acorde al resto de la página */
   transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
 }

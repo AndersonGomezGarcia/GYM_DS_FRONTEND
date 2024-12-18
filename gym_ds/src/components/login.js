@@ -24,8 +24,11 @@ function Login() {
 
       if (response.ok) {
         const data = await response.text(); // Procesar respuesta del backend
+        sessionStorage.setItem('userId', data); // Guarda la ID del usuario en sessionStora
         alert(data); // Mostrar mensaje de éxito
-        navigate("/home"); // Redirigir al home después del login (ajustar según tu ruta)
+        navigate("/userhome"); // Redirigir al home después del login (ajustar según tu ruta)
+
+        
       } else {
         const error = await response.text();
         setErrorMessage(error); // Mostrar mensaje de error del backend
