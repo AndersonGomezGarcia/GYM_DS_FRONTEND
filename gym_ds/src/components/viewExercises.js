@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./stylesViewExercises.css";
 import { Menu } from "./menu";
-function ViewExercises() {
+function ViewExercises({showMenu = true}) {
   const [exercises, setExercises] = useState([]); // Lista de ejercicios
   const [searchTerm, setSearchTerm] = useState(""); // Término de búsqueda
   const [filteredExercises, setFilteredExercises] = useState([]); // Resultados filtrados
@@ -49,7 +49,7 @@ function ViewExercises() {
 
   return (
     <>
-      <Menu />
+      {showMenu &&  <Menu />}
       <div className="view-exercises-container">
         {/* Título */}
         <h1>Buscar Ejercicio</h1>

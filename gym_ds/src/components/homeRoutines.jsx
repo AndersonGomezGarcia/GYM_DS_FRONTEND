@@ -3,7 +3,7 @@ import "./homeRoutines.css";
 import { Link } from "react-router-dom";
 import { Routine } from "./component";
 import { Menu } from "./menu";
-function HomeRoutines() {
+function HomeRoutines({showMenu = true}) {
   const [selectedRoutine, setSelectedRoutine] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -38,7 +38,7 @@ function HomeRoutines() {
 
   return (
     <div className="homeRoutines">
-      <Menu />
+      {showMenu && <Menu />}
       <section className="header">
         <h1 className="TitleRoutines">Descubre como mejorar tu cuerpo</h1>
         <div className="search">

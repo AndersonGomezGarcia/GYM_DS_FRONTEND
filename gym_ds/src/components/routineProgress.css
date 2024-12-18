@@ -75,7 +75,10 @@ h3{
     justify-content: center;
     margin-top: 50px;
 }
-
+.list-progress-card h1{
+    color: #fd3620;
+    margin-bottom: 30px;
+}
 .progress-circle span{
     position: absolute;
     top: calc(50% - 32px);
@@ -171,5 +174,6 @@ h3{
     cursor: pointer;
     width: 500px;
     border-radius: 10px;
+    margin: 100px 0 0 0 ;
 
 }

@@ -40,6 +40,14 @@
   transition: background-color 0.3s ease;
 }
 
+.column h2{
+  color: #ffeee7;
+}
+
+.column:hover h2{
+  color: rgb(253, 106, 0);
+}
+
 .column:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -52,6 +60,11 @@
   padding: 20px;
   border-radius: 10px;
 }
+
+.content-section > div{
+  margin-top: -75px;
+}
+
 .user-logo{
   margin-left: 180px;
 }

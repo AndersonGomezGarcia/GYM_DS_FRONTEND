@@ -2,7 +2,7 @@ import React, { CSSProperties, useState } from "react";
 import "./routineProgress.css";
 import { Menu } from "./menu";
 
-function RoutineProgress() {
+function RoutineProgress({ showMenu = true}) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const openPopup = () => {
@@ -14,7 +14,7 @@ function RoutineProgress() {
   };
   return (
     <>
-      <Menu />
+      {showMenu && <Menu />}
       <div className="list-progress-card">
         <h1>Progreso de personal!</h1>
         <div className="progress-card">

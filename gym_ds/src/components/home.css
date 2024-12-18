@@ -153,8 +153,9 @@ section strong{
     font-size: 19px;
 }
 
-button{
+.home button{
     margin: 25px auto 50px auto;
+    border-radius: 15px;
 }
 
 p, p strong{

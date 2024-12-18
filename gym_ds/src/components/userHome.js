@@ -3,11 +3,14 @@ import "./stylesUserHome.css"; // Archivo CSS para los estilos
 import RoutineProgress from "./routineProgress";
 import RoutineChoosing from "./routineChoosing";
 import referenceImage from "./img/usuario.png";
+import HomeRoutines from "./homeRoutines";
 import { Link } from "react-router-dom";
 import { Menu } from "./menu";
+import ViewExercises from "./viewExercises";
+
 function UserHome() {
   const [visibleComponent, setVisibleComponent] = useState(null); // Estado para componentes visibles
-  const userName = "Nombre del Usuario"; // Cambiar por el nombre dinámico del usuario
+  const userName = sessionStorage.getItem('userId'); // Cambiar por el nombre dinámico del usuario
 
   // Función para alternar visibilidad
   const handleColumnClick = (component) => {
@@ -38,9 +41,15 @@ function UserHome() {
           <div className="columns-section">
             <div
               className="column"
-              onClick={() => handleColumnClick("routineChoosing")}
+              onClick={() => handleColumnClick("HomeRoutines")}
             >
               <h2>Seleccionar Rutina</h2>
+            </div>
+            <div
+              className="column"
+              onClick={() => handleColumnClick("viewExercises")}
+            >
+              <h2>Ver Progreso</h2>
             </div>
             <div
               className="column"
@@ -64,7 +73,9 @@ function UserHome() {
                 <RoutineChoosing routine={{ id: 1 }} />
               </div>
             )}
-            {visibleComponent === "routineProgress" && <RoutineProgress />}
+            {visibleComponent === "HomeRoutines" && <HomeRoutines showMenu={false} />}
+            {visibleComponent === "viewExercises" && <ViewExercises showMenu={false} />}
+            {visibleComponent === "routineProgress" && <RoutineProgress showMenu={false} />}
             {visibleComponent === "additionalInfo" && (
               <div className="additional-info">
                 <p>Aquí puedes agregar contenido adicional.</p>

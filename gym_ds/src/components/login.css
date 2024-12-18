@@ -44,16 +44,12 @@ input {
 }
 
 /* Botón */
-button {
+.login-container button {
   padding: 10px;
-  background-color: #007bff;
-  color: rgb(14, 17, 26);
   border: none;
   cursor: pointer;
   width: 90%;
   border-radius: 10px;
-  font-weight: bold;
-  font-size: 1rem;
 }
 
 button:hover {
