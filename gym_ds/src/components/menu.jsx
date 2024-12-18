@@ -11,13 +11,13 @@ export const Menu = () => {
             <a href="/userHome">HOME</a>
           </li>
           <li>
-            <a href="/routineProgress">PROGRESO</a>
+            <a href="/viewExercises">EJERCICIOS</a>
           </li>
           <li>
             <a href="/HomeRoutines">RUTINAS</a>
           </li>
           <li>
-            <a href="/viewExercises">EJERCICIOS</a>
+            <a href="/">LOG OUT</a>
           </li>
         </ul>
       </nav>
