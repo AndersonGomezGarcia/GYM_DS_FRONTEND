@@ -10,16 +10,16 @@ function Home() {
           <img className="logo" alt="Gym DS" />
           <ul>
             <li>
-              <a href="/Home">HOME</a>
+              <a href="/">INICIO</a>
             </li>
             <li>
-              <a href="/routineProgress">PROGRESO</a>
+              <a href="/signUp">USUARIO</a>
             </li>
             <li>
-              <a href="/routineChoosing">RUTINAS</a>
+              <a href="/routineChoosing">GYM</a>
             </li>
             <li>
-              <a href="/createExercises">EJERCICIOS</a>
+              <a href="/info">INFO</a>
             </li>
           </ul>
         </nav>

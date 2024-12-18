@@ -19,9 +19,9 @@
   width: 90%; /* Ocupa más espacio horizontal */
   max-width: 1600px; /* Ampliar para pantallas grandes */
   height: 90vh; /* Incrementa el alto */
-  margin: 0 auto;
-  background-color: #1e1e1e;
-  border-radius: 20px;
+  margin: 5vh auto;
+  background-color: rgb(14, 17, 26);
+  border-radius: 0 20px 20px 0;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7); /* Sombra elegante */
   overflow: hidden;
 }
@@ -50,6 +50,7 @@
   background-color: rgba(255, 255, 255, 0.1); /* Transparente */
   border-left: 2px solid rgba(255, 255, 255, 0.2); /* Línea divisoria elegante */
   display: flex;
+  border-radius: 0 ;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -69,8 +70,8 @@
 .signup-page .form-container select {
   width: 95%; /* Ancho incrementado */
   max-width: 600px; /* Más grande para pantallas grandes */
-  padding: 1.2rem; /* Más grande */
-  margin-bottom: 1.2rem;
+  padding: .5rem; /* Más grande */
+  margin-bottom: 1rem;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background-color: rgba(255, 255, 255, 0.1);
@@ -83,7 +84,7 @@
 .signup-page .form-container button {
   width: 95%;
   max-width: 600px;
-  padding: 1.2rem;
+  padding:  .6rem 1.2rem;
   margin-top: 1.2rem;
   background-color: #e74c3c;
   border: none;
@@ -120,6 +121,7 @@
 }
 label{
   margin-bottom: 10px;
+  color: lightgray;
 }
 
 /* Botón Guía IMC */

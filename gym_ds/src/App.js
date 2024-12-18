@@ -10,7 +10,7 @@ import CreateExercises from './components/createExercises'; // Importa el compon
 import UserHome from './components/userHome';
 import HomeRoutines from './components/homeRoutines';
 import ViewExercises from './components/viewExercises';
-
+import Info from './components/info';
 function App() {
   return (
     <div className="App">
@@ -25,6 +25,7 @@ function App() {
           <Route path="/userHome" element={<UserHome/>} /> {/*Pagina principal del usuario*/}
           <Route path="/HomeRoutines" element={<HomeRoutines/>} /> {/*Pagina principal del usuario*/}
           <Route path="/viewExercises" element={<ViewExercises/>} /> {/*Pagina para ver los ejercicios. */}
+          <Route path="/info" element={<Info/>} /> {/*Pagina para ver los ejercicios. */}
         </Routes>
       </Router>
     </div>

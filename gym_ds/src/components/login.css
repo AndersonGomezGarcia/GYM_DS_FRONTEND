@@ -3,7 +3,7 @@
   display: flex;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 5vh auto;
   height: 90vh; /* Asegura que ocupe el 90% de la altura del viewport */
   background-color: rgb(14, 17, 26);
   border-radius: 15px;
@@ -27,9 +27,9 @@
 
 /* Título del formulario */
 .form-container h2 {
-  margin-bottom: 1rem;
-  color: white;
-  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem; /* Tamaño más grande */
+  color: #e74c3c;
 }
 
 /* Inputs del formulario */

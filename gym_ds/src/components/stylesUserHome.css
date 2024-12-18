@@ -8,46 +8,13 @@
   flex-direction: column;
 }
 
-/* Barra de navegación */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 60px;
-  background-color: rgba(47, 47, 47, 0.9); /* Fondo translúcido */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
 
-.nav-links {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-item {
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.nav-item:hover {
-  color: #ff4500;
-  transform: scale(1.1);
-}
 
 /* Contenido principal */
 .main-content {
   display: flex;
   flex-direction: column;
-  padding-top: 80px; /* Para compensar la barra de navegación */
-  padding: 100px 20px 20px 20px;
+  padding: 150px 20px 20px 20px;
 }
 
 /* Contenedor de columnas y contenido dinámico */
@@ -92,9 +59,9 @@
 .user-image {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
+  background-color: transparent;
 }
 
 /* Sección de bienvenida */

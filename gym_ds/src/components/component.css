@@ -24,7 +24,7 @@
 }
 
 .routine-card:hover{
-    background-color: rgba(2, 2, 2, 0.8);;
+    background-color: rgba(140, 129, 129, 0.318);;
     transition: .3s;
     transform: translateY(-10px);
 }

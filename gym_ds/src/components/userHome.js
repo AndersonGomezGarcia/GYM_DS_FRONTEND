@@ -2,9 +2,9 @@ import  React, { useState } from "react";
 import "./stylesUserHome.css"; // Archivo CSS para los estilos
 import RoutineProgress from "./routineProgress";
 import RoutineChoosing from "./routineChoosing";
-import referenceImage from "./img/ejemplo2.jpg";
+import referenceImage from "./img/usuario.png";
 import { Link } from "react-router-dom";
-
+import { Menu } from "./menu";
 function UserHome() {
   const [visibleComponent, setVisibleComponent] = useState(null); // Estado para componentes visibles
   const userName = "Nombre del Usuario"; // Cambiar por el nombre dinámico del usuario
@@ -17,13 +17,7 @@ function UserHome() {
   return (
     <div className="user-home-container">
       {/* Barra de navegación */}
-      <nav className="navbar">
-        <ul className="nav-links">
-          <li className="nav-item"><Link to="../Home">Home</Link> </li>
-          <li className="nav-item">Settings</li>
-          <li className="nav-item">Profile</li>
-        </ul>
-      </nav>
+      <Menu />
 
       {/* Contenido principal */}
       <div className="main-content">

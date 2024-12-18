@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./stylesSignUp.css";
 import referenceImage from "./img/sign-up-img.jpg";
 import healthImage from "./img/imcImg.jpg";
-
+import { Link } from "react-router-dom";
+import Login from "./login";
 function SignupAndProfile() {
   const [formData, setFormData] = useState({
     name: "",
@@ -220,6 +221,9 @@ function SignupAndProfile() {
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         {successMessage && <p className="success-message">{successMessage}</p>}
+        <div className="link-sign_up">
+          ¿Ya tienes una cuenta? <Link to="/login">Logeate aquí</Link> {Login}
+        </div>
       </div>
     </div>
   );

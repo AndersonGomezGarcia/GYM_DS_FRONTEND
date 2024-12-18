@@ -18,10 +18,10 @@ function RoutineProgress() {
       <div className="list-progress-card">
         <h1>Progreso de personal!</h1>
         <div className="progress-card">
-          <h2>Progreso Brazo</h2>
+          <h2>Progreso Grasa</h2>
           <div
             className="progress-circle"
-            style={{ "--i": 75, "--clr": "green" }} //i = porcentaje de progreso, clr = color del circulo
+            style={{ "--i": 75, "--clr": "orange" }} //i = porcentaje de progreso, clr = color del circulo
           >
             <span>75%</span>
           </div>
@@ -31,10 +31,10 @@ function RoutineProgress() {
           </h3>
         </div>
         <div className="progress-card">
-          <h2>Progreso Brazo</h2>
+          <h2>Progreso de Peso</h2>
           <div
             className="progress-circle less"
-            style={{ "--i": 25, "--clr": "blue" }}
+            style={{ "--i": 25, "--clr": "cyan" }}
           >
             {" "}
             <span>25%</span>
@@ -44,19 +44,7 @@ function RoutineProgress() {
             cuerpo
           </h3>
         </div>
-        <div className="progress-card">
-          <h2>Progreso Brazo</h2>
-          <div
-            className="progress-circle less"
-            style={{ "--i": 35, "--clr": "red" }}
-          >
-            <span>35%</span>
-          </div>
-          <h3>
-            Felicitaciones ya casi cumples tu objetivos en el tren superior del
-            cuerpo
-          </h3>
-        </div>
+        
       </div>
       <div className="update-progress">
         <button className="open-popup" onClick={openPopup}>
@@ -70,7 +58,8 @@ function RoutineProgress() {
               &times;
             </span>
             <h2>Actualizar Progreso</h2>
-            <form>
+            
+            <form >
               <div className="form-group">
                 <label>Fecha:</label>
                 <input type="date" name="fecha" />
@@ -103,8 +92,11 @@ function RoutineProgress() {
                 <label>Comentarios:</label>
                 <textarea name="comentarios"></textarea>
               </div>
-              <button type="submit">Guardar</button>
+              <button type="submit" >Guardar</button>
             </form>
+
+
+            
           </div>
         </div>
       )}

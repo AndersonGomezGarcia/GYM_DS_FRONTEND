@@ -8,16 +8,16 @@ export const Menu = () => {
         <img className="logo" alt="Gym DS" />
         <ul>
           <li>
-            <a href="/HomeRoutines">HOME</a>
+            <a href="/userHome">HOME</a>
           </li>
           <li>
             <a href="/routineProgress">PROGRESO</a>
           </li>
           <li>
-            <a href="/routineChoosing">RUTINAS</a>
+            <a href="/HomeRoutines">RUTINAS</a>
           </li>
           <li>
-            <a href="/createExercises">EJERCICIOS</a>
+            <a href="/viewExercises">EJERCICIOS</a>
           </li>
         </ul>
       </nav>
